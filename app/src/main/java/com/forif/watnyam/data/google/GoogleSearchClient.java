@@ -4,6 +4,8 @@ package com.forif.watnyam.data.google;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.forif.watnyam.data.RetrofitInstanceBuilder;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,14 +32,15 @@ public class GoogleSearchClient {
 
         Call<GoogleSearchModel> call =
         googleSearchService.getGoogleSearchResult(
-                "cats", GOOGLE_API_KEY, GOOGLE_SEARCH_ENGINE_ID, "json"
+                "Hamburger", GOOGLE_API_KEY, GOOGLE_SEARCH_ENGINE_ID, "json"
         );
 
         call.enqueue(new Callback<GoogleSearchModel>() {
             @Override
             public void onResponse(Call<GoogleSearchModel> call, Response<GoogleSearchModel> response) {
                 Log.d(TAG, "onResponse: " + response.code());
-                Log.d(TAG, "onResponse: " + response.body().getItems().get(0).getTitle());
+                Log.d(TAG, "onResponse: " + response.body().getItems().get(0).getSnippet());
+
             }
 
             @Override

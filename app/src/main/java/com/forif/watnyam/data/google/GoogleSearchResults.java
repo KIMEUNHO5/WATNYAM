@@ -5,6 +5,8 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class GoogleSearchResults implements Parcelable {
 
     @SerializedName("title")
@@ -13,23 +15,21 @@ public class GoogleSearchResults implements Parcelable {
     @SerializedName("snippet")
     private String snippet;
 
-    public String getTitle() {
-        return title;
-    }
+    @SerializedName("pagemap")
+    private GoogleThumbnails thumbnails;
 
-    public String getSnippet() {
-        return snippet;
-    }
 
     protected GoogleSearchResults(Parcel in) {
         title = in.readString();
         snippet = in.readString();
+        thumbnails = in.readParcelable(GoogleThumbnails.class.getClassLoader());
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(title);
         dest.writeString(snippet);
+        dest.writeParcelable(thumbnails, flags);
     }
 
     @Override
@@ -48,4 +48,16 @@ public class GoogleSearchResults implements Parcelable {
             return new GoogleSearchResults[size];
         }
     };
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getSnippet() {
+        return snippet;
+    }
+
+    public GoogleThumbnails getThumbnails() {
+        return thumbnails;
+    }
 }
