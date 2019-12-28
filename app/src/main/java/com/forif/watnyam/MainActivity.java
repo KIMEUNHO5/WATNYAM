@@ -1,4 +1,4 @@
-package com.gahee.watnyam;
+package com.forif.watnyam;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -6,9 +6,9 @@ import androidx.viewpager.widget.ViewPager;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.gahee.watnyam.ui.fragments.MyFragPagerAdapter;
-import com.gahee.watnyam.ui.fragments.RouletteFragment;
-import com.gahee.watnyam.ui.fragments.WorldCupFragment;
+import com.forif.watnyam.ui.fragments.MyFragPagerAdapter;
+import com.forif.watnyam.ui.fragments.RouletteFragment;
+import com.forif.watnyam.ui.fragments.WorldCupFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity

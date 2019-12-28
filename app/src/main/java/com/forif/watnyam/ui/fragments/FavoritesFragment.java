@@ -1,4 +1,4 @@
-package com.gahee.watnyam.ui.fragments;
+package com.forif.watnyam.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.gahee.watnyam.R;
+import com.forif.watnyam.R;
 
 public class FavoritesFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match

@@ -1,4 +1,4 @@
-package com.gahee.watnyam.ui.fragments;
+package com.forif.watnyam.ui.fragments;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
