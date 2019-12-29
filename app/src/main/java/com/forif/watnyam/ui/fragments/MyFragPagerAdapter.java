@@ -9,6 +9,7 @@ public class MyFragPagerAdapter extends FragmentPagerAdapter {
 
     public MyFragPagerAdapter(FragmentManager fm) {
         super(fm);
+
     }
 
     @Override

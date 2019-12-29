@@ -19,7 +19,7 @@ public class YoutubeViewModel extends ViewModel{
         youtubeRepository.fetchYoutubeData(query);
     }
 
-    private MutableLiveData<ArrayList<YoutubeData>> getMutableLiveYoutubeData(){
+    public MutableLiveData<ArrayList<YoutubeData>> getMutableLiveYoutubeData(){
         return youtubeRepository.getYoutubeMutableLiveData();
     }
 

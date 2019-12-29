@@ -50,16 +50,16 @@ public class GoogleSearchClient {
                 Log.d(TAG, "onResponse: " + response.code());
 //                Log.d(TAG, "onResponse: " + response.body().getItems().get(0).getThumbnails().getGoogleImageList().get(0).getSrc());
 
-                if(response.code() == 200 && response.body().getItems() != null){
-                        List<GoogleSearchResults> googleSearchResults = response.body().getItems();
-                        for(int i = 0; i < googleSearchResults.size(); i++){
-                            googleDataArrayList.add(new GoogleData(
-                                    googleSearchResults.get(i).getTitle(),
-                                    googleSearchResults.get(i).getSnippet(),
-                                    googleSearchResults.get(i).getThumbnails().getGoogleImageList().get(0).getSrc()
-                            ));
-                        }
-                }
+//                if(response.code() == 200 && response.body().getItems() != null){
+//                        List<GoogleSearchResults> googleSearchResults = response.body().getItems();
+//                        for(int i = 0; i < googleSearchResults.size(); i++){
+//                            googleDataArrayList.add(new GoogleData(
+//                                    googleSearchResults.get(i).getTitle(),
+//                                    googleSearchResults.get(i).getSnippet(),
+//                                    ""
+//                            ));
+//                        }
+//                }
 
                 mutableLiveData.setValue(googleDataArrayList);
             }

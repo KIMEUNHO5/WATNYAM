@@ -3,4 +3,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="sample_long">네이버 책검색 API를 사용하여 아래와 같이 책 정보를 검색하는 웹페이지를 만드실 수 있습니다. 예제는 HTML/CSS 및 Ajax와 PHP를 사용하여 아래와 같은 결과를 ...</string>
 </resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.forif.watnyam.SearchResultActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<LinearLayout
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title_naver_image"
+        android:text="NAVER IMAGE"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_naver_image_result"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/rv_height"/>
+
+    <TextView
+        android:id="@+id/tv_title_youtube"
+        android:text="YOUTUBE"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_youtube_result"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:layout_height="@dimen/rv_height"/>
+
+    <TextView
+        android:text="NAVER BLOG"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:id="@+id/tv_title_naver_blog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_naver_blog_result"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:layout_height="@dimen/rv_height"/>
+
+    <TextView
+        android:text="GOOGLE"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:id="@+id/tv_title_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_google_result"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:layout_height="@dimen/rv_height"/>
+
+</LinearLayout>
+
+</ScrollView>

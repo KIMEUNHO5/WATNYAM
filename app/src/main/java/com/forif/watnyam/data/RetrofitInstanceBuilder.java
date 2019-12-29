@@ -11,7 +11,7 @@ public class RetrofitInstanceBuilder {
 
     public static final String YOUTUBE_SEARCH_BASE_URL = "https://www.googleapis.com/";
 
-    public static final String NAVER_SEARCH_BASE_URL = "https://www.googleapis.com/";
+    public static final String NAVER_SEARCH_BASE_URL = "https://openapi.naver.com/v1/";
 
 
 
