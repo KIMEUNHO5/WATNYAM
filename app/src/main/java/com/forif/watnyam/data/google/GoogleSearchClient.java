@@ -4,8 +4,14 @@ package com.forif.watnyam.data.google;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import androidx.lifecycle.MutableLiveData;
+
 import com.forif.watnyam.data.RetrofitInstanceBuilder;
 import com.forif.watnyam.data.SearchService;
+import com.forif.watnyam.model.GoogleData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,6 +25,9 @@ public class GoogleSearchClient {
     private static final String TAG = "GoogleSearchClient";
     public static GoogleSearchClient googleSearchClient;
 
+    private MutableLiveData<List<GoogleData>> googleData = new MutableLiveData<>();
+    private List<GoogleData> googleDataArrayList = new ArrayList<>();
+
     public static GoogleSearchClient getInstance() {
         if(googleSearchClient == null){
             googleSearchClient = new GoogleSearchClient();
@@ -27,20 +36,33 @@ public class GoogleSearchClient {
         return googleSearchClient;
     }
 
-    private void getResult(){
+    public void getResult(){
         SearchService googleSearchService
         = RetrofitInstanceBuilder.getGoogleSearchService();
 
         Call<GoogleSearchModel> call =
         googleSearchService.getGoogleSearchResult(
-                "Hamburger", GOOGLE_API_KEY, GOOGLE_SEARCH_ENGINE_ID, "json"
+                "배민 치킨", GOOGLE_API_KEY, GOOGLE_SEARCH_ENGINE_ID, "json"
         );
 
         call.enqueue(new Callback<GoogleSearchModel>() {
             @Override
             public void onResponse(Call<GoogleSearchModel> call, Response<GoogleSearchModel> response) {
                 Log.d(TAG, "onResponse: " + response.code());
-                Log.d(TAG, "onResponse: " + response.body().getItems().get(0).getSnippet());
+                Log.d(TAG, "onResponse: " + response.body().getItems().get(0).getThumbnails().getGoogleImageList().get(0).getSrc());
+
+//                if(response.body() != null){
+//                    if(response.body().getItems() != null){
+//                        List<GoogleSearchResults> googleSearchResults = response.body().getItems();
+//                        for(int i = 0; i < googleSearchResults.size(); i++){
+//                            googleDataArrayList.add(new GoogleData(
+//                                    googleSearchResults.get(i).getTitle(),
+//                                    googleSearchResults.get(i).getSnippet(),
+//                                    googleSearchResults.get(i).getThumbnails().getGoogleImageList().get(0).getSrc()
+//                            ));
+//                        }
+//                    }
+//                }
 
             }
 
@@ -51,16 +73,4 @@ public class GoogleSearchClient {
         });
     }
 
-    class GoogleAsync extends AsyncTask<Void, Void, Void>{
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            getResult();
-            return null;
-        }
-    }
-
-    public void executeGoogleAsync(){
-        new GoogleAsync().execute();
-    }
 }

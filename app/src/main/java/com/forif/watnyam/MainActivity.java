@@ -1,12 +1,14 @@
 package com.forif.watnyam;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
 import android.net.Uri;
 import android.os.Bundle;
 
 import com.forif.watnyam.data.google.GoogleSearchClient;
+import com.forif.watnyam.data.google.GoogleViewModel;
 import com.forif.watnyam.data.youtube.YoutubeSearchClient;
 import com.forif.watnyam.ui.fragments.MyFragPagerAdapter;
 import com.forif.watnyam.ui.fragments.RouletteFragment;
@@ -30,8 +32,11 @@ public class MainActivity extends AppCompatActivity
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
-        GoogleSearchClient googleSearchClient = GoogleSearchClient.getInstance();
-        googleSearchClient.executeGoogleAsync();
+
+        GoogleViewModel googleViewModel
+                = ViewModelProviders.of(this).get(GoogleViewModel.class);
+
+        googleViewModel.fetchGoogleSearchResults();
 
         YoutubeSearchClient youtubeSearchClient = YoutubeSearchClient.getInstance();
         youtubeSearchClient.executeYoutube();
