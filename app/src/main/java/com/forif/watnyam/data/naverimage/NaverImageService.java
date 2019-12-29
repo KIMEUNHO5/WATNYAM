@@ -15,6 +15,6 @@ public interface NaverImageService {
     @Headers({"X-Naver-Client-id: " + NAVER_CLIENT_ID,
     "X-Naver-Client-Secret: " + NAVER_CLIENT_SECRET})
     @GET("search/image")
-    Call<NaverImageItemsModel> getNews(@Query("query") String query, @Query("display") int display, @Query("start") int start, @Query("sort") String sort, @Query("filter") String filter);
+    Call<NaverImageItemsModel> getNaverImage(@Query("query") String query, @Query("display") int display, @Query("start") int start, @Query("sort") String sort, @Query("filter") String filter);
 
 }

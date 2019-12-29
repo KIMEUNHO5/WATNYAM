@@ -11,7 +11,7 @@ import java.util.List;
 public class NaverImageItemsModel implements Parcelable {
 
     @SerializedName("items")
-    private List<NaverImageModel> items;
+    private List<NaverImageResult> items;
 
     protected NaverImageItemsModel(Parcel in) {
     }
@@ -28,7 +28,7 @@ public class NaverImageItemsModel implements Parcelable {
         }
     };
 
-    public List<NaverImageModel> getItems() {
+    public List<NaverImageResult> getItems() {
         return items;
     }
 

@@ -3,22 +3,27 @@ package com.forif.watnyam.data.naverimage;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.forif.watnyam.model.NaverImageData;
+
+import java.util.ArrayList;
+
 public class NaverImageViewModel extends ViewModel {
 
-    MutableLiveData<NaverImageItemsModel> newsItemsLive = new MutableLiveData<>();
-    private Repo repo;
+    private NaverImageRepository naverImageRepository;
 
     public NaverImageViewModel(){
-        repo = Repo.getInstance();
+        naverImageRepository = NaverImageRepository.getInstance();
     }
 
-    public MutableLiveData<NaverImageItemsModel> getNewsItemsLive() {
-        newsItemsLive = repo.getNewsItemsModelMutableLiveData();
-        return newsItemsLive;
+    private MutableLiveData<ArrayList<NaverImageData>> naverImageMutableLiveData
+            = new MutableLiveData<>();
+
+    public void fetchNaverImageData(String query){
+        naverImageRepository.fetchNaverImageResultAsync(query);
     }
 
-    public void fetchNews(String q, int d, int s, String st){
-        repo.executeNewsAsync(q, d, s, st);
+    public MutableLiveData<ArrayList<NaverImageData>> getNaverImageMutableLiveData(){
+        return naverImageRepository.getNaverImageData();
     }
 
 }

@@ -2,6 +2,12 @@ package com.forif.watnyam.data.google;
 
 import android.os.AsyncTask;
 
+import androidx.lifecycle.MutableLiveData;
+
+import com.forif.watnyam.model.GoogleData;
+
+import java.util.ArrayList;
+
 public class GoogleRepository {
 
     private GoogleSearchClient googleSearchClient;
@@ -16,24 +22,27 @@ public class GoogleRepository {
 
     public GoogleRepository() {
         googleSearchClient = GoogleSearchClient.getInstance();
-
     }
 
-    public void fetchGoogleResultAsync(){
-        new GoogleAsync(googleSearchClient).execute();
+    public MutableLiveData<ArrayList<GoogleData>> getMutableLiveGoogleData(){
+        return googleSearchClient.getMutableLiveData();
+    }
+
+    public void fetchGoogleResultAsync(String query){
+        new GoogleAsync(query).execute();
     }
 
     class GoogleAsync extends AsyncTask<Void, Void, Void> {
 
-        GoogleSearchClient googleSearchClient;
+        private String query;
 
-        public GoogleAsync(GoogleSearchClient googleSearchClient){
-            this.googleSearchClient = googleSearchClient;
+        public GoogleAsync(String query){
+            this.query = query;
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
-            googleSearchClient.getResult();
+            googleSearchClient.getResult(query);
             return null;
         }
     }

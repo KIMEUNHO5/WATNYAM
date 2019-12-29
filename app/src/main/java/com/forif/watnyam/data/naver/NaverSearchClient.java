@@ -27,7 +27,7 @@ public class NaverSearchClient {
     private void getNaverResult() {
         SearchService naverSearchService = RetrofitInstanceBuilder.getNaverSearchService();
 
-        Call<NaverSearchModel> call = naverSearchService.getNaverSearchResult("Chicken", 20, 1, sim);
+        Call<NaverSearchModel> call = naverSearchService.getNaverSearchResult("Chicken", 20, 1, "sim");
 
         call.enqueue(new Callback<NaverSearchModel>() {
 

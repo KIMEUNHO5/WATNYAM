@@ -50,6 +50,18 @@ public class RetrofitInstanceBuilder {
         return NAVER_SEARCH_SERVICE;
     }
 
-    public static NaverImageService getNewsService() {
+
+    public static final String NAVER_IMAGE_BASE_URL = "https://openapi.naver.com/v1/";
+
+    private static Retrofit retrofitNaverImage
+            = new Retrofit.Builder().baseUrl(NAVER_IMAGE_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+
+    private static final NaverImageService NAVER_IMAGE_SERVICE
+            = retrofitNaverImage.create(NaverImageService.class);
+
+    public static NaverImageService getNaverImageService() {
+        return NAVER_IMAGE_SERVICE;
     }
 }
