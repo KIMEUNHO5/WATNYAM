@@ -33,6 +33,7 @@ public class YoutubeSearchClient {
             public void onResponse(Call<YoutubeSearchModel> call, Response<YoutubeSearchModel> response) {
                 Log.d(TAG, "onResponse: " + response.code());
                 Log.d(TAG, "onResponse: " + response.body().getYoutubeSearchResultsList().get(0).getVideoId());
+                Log.d(TAG, "onResponse: ");
             }
 
             @Override
