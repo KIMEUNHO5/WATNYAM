@@ -5,17 +5,18 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.forif.watnyam.data.RetrofitInstanceBuilder;
+import com.forif.watnyam.data.SearchService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static androidx.constraintlayout.widget.Constraints.TAG;
 import static com.forif.watnyam.Config.GOOGLE_API_KEY;
 import static com.forif.watnyam.Config.GOOGLE_SEARCH_ENGINE_ID;
 
 public class GoogleSearchClient {
 
+    private static final String TAG = "GoogleSearchClient";
     public static GoogleSearchClient googleSearchClient;
 
     public static GoogleSearchClient getInstance() {
@@ -27,7 +28,7 @@ public class GoogleSearchClient {
     }
 
     private void getResult(){
-        GoogleSearchService googleSearchService
+        SearchService googleSearchService
         = RetrofitInstanceBuilder.getGoogleSearchService();
 
         Call<GoogleSearchModel> call =

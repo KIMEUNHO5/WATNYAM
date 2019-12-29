@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import com.forif.watnyam.data.google.GoogleSearchClient;
+import com.forif.watnyam.data.youtube.YoutubeSearchClient;
 import com.forif.watnyam.ui.fragments.MyFragPagerAdapter;
 import com.forif.watnyam.ui.fragments.RouletteFragment;
 import com.forif.watnyam.ui.fragments.WorldCupFragment;
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity
 
         GoogleSearchClient googleSearchClient = GoogleSearchClient.getInstance();
         googleSearchClient.executeGoogleAsync();
+
+        YoutubeSearchClient youtubeSearchClient = YoutubeSearchClient.getInstance();
+        youtubeSearchClient.executeYoutube();
 
     }
 

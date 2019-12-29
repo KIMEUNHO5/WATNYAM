@@ -1,7 +1,5 @@
 package com.forif.watnyam.data;
 
-import com.forif.watnyam.data.google.GoogleSearchService;
-
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -12,16 +10,27 @@ public class RetrofitInstanceBuilder {
     public static final String YOUTUBE_SEARCH_BASE_URL = "https://www.googleapis.com/";
 
 
-    private static Retrofit retrofit
+
+    private static Retrofit retrofitGoogle
             = new Retrofit.Builder().baseUrl(GOOGLE_SEARCH_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-    private static final GoogleSearchService GOOGLE_SEARCH_SERVICE
-            = retrofit.create(GoogleSearchService.class);
+    private static final SearchService GOOGLE_SEARCH_SERVICE
+            = retrofitGoogle.create(SearchService.class);
 
-    public static GoogleSearchService getGoogleSearchService() {
+    public static SearchService getGoogleSearchService() {
         return GOOGLE_SEARCH_SERVICE;
     }
+
+    //boilerplate
+    private static Retrofit retrofitYoutube
+            = new Retrofit.Builder().baseUrl(YOUTUBE_SEARCH_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create()).build();
+
+    private static final SearchService YOUTUBE_SEARCH_SERVICE
+            = retrofitYoutube.create(SearchService.class);
+
+    public static SearchService getYoutubeSearchService(){return YOUTUBE_SEARCH_SERVICE; }
 
 }
