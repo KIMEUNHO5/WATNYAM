@@ -26,14 +26,18 @@ public class YoutubeSearchClient {
     public void getYoutubeResult(){
         SearchService searchService = RetrofitInstanceBuilder.getYoutubeSearchService();
         Call<YoutubeSearchModel> call =
-        searchService.getYoutubeSearchResult("snippet", "jazz music", YOUTUBE_API_KEY, 50);
+        searchService.getYoutubeSearchResult("snippet", "라면 먹방", YOUTUBE_API_KEY, 5);
 
         call.enqueue(new Callback<YoutubeSearchModel>() {
             @Override
             public void onResponse(Call<YoutubeSearchModel> call, Response<YoutubeSearchModel> response) {
                 Log.d(TAG, "onResponse: " + response.code());
-                Log.d(TAG, "onResponse: " + response.body().getYoutubeSearchResultsList().get(0).getVideoId());
-                Log.d(TAG, "onResponse: ");
+
+                for(int i = 0; i < response.body().getYoutubeSearchResultsList().size(); i++){
+                    if(response.body().getYoutubeSearchResultsList().get(i).getYoutubeSearchSnippets() != null) {
+                        Log.d(TAG, "onResponse: " + response.body().getYoutubeSearchResultsList().get(i).getYoutubeSearchSnippets().getTitle());
+                    }
+                }
             }
 
             @Override

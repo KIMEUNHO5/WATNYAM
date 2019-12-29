@@ -7,23 +7,29 @@ import com.google.gson.annotations.SerializedName;
 
 public class YoutubeSearchResults implements Parcelable{
 
-    @SerializedName("videoId")
-    private String videoId;
+    @SerializedName("id")
+    private YoutubeSearchId videoId;
 
-    @SerializedName("thumbnails")
-    private YoutubeThumbnail youtubeThumbnail;
+    @SerializedName("snippet")
+    private YoutubeSearchSnippets youtubeSearchSnippets;
 
+    public YoutubeSearchId getVideoId() {
+        return videoId;
+    }
 
+    public YoutubeSearchSnippets getYoutubeSearchSnippets() {
+        return youtubeSearchSnippets;
+    }
 
     protected YoutubeSearchResults(Parcel in) {
-        videoId = in.readString();
-        youtubeThumbnail = in.readParcelable(YoutubeThumbnail.class.getClassLoader());
+        videoId = in.readParcelable(YoutubeSearchId.class.getClassLoader());
+        youtubeSearchSnippets = in.readParcelable(YoutubeSearchSnippets.class.getClassLoader());
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(videoId);
-        dest.writeParcelable(youtubeThumbnail, flags);
+        dest.writeParcelable(videoId, flags);
+        dest.writeParcelable(youtubeSearchSnippets, flags);
     }
 
     @Override
@@ -42,39 +48,5 @@ public class YoutubeSearchResults implements Parcelable{
             return new YoutubeSearchResults[size];
         }
     };
-
-    public String getVideoId() {
-            return videoId;
-    }
-
-    public YoutubeThumbnail getYoutubeThumbnail() {
-        return youtubeThumbnail;
-    }
-
-        //    {
-//  "kind": "youtube#searchResult",
-//  "etag": etag,
-//  "id": {
-//    "kind": string,
-//    "videoId": string,
-//    "channelId": string,
-//    "playlistId": string
-//  },
-//  "snippet": {
-//    "publishedAt": datetime,
-//    "channelId": string,
-//    "title": string,
-//    "description": string,
-//    "thumbnails": {
-//      (key): {
-//        "url": string,
-//        "width": unsigned integer,
-//        "height": unsigned integer
-//      }
-//    },
-//    "channelTitle": string
-//  }
-//}
-
 }
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class GoogleThumbnails implements Parcelable {
 
-    @SerializedName("cse_thumbnail")
+    @SerializedName("cse_image")
     private List<GoogleImage> googleImageList;
 
     public List<GoogleImage> getGoogleImageList() {
