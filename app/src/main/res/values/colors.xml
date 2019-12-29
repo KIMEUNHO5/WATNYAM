@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
 
-    <color name="colorWhite">#FFFFFF</color>
-    <color name="colorBlack">#000000</color>
+
     <color name="colorYellow">#FFC107</color>
 
     <!-- Basic colors -->
@@ -16,5 +12,14 @@
     <color name="colorTransparentBlack">#6F000000</color>
     <color name="matrixGrey">#747574</color>
     <color name="colorDarkGrey">#2B2B2A</color>
+
+    <color name="colorPrimaryBright">#fcc913</color>
+    <color name="colorPrimary">#fba913</color>
+    <color name="colorPrimaryDark">#eb6100</color>
+    <color name="colorAccent">#eb6100</color>
+
+    <color name="colorBackground">#fffde8</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
 
 </resources>
