@@ -7,14 +7,10 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class YoutubeSearchModel implements Parcelable {
+public class YoutubeSearchModel implements Parcelable{
 
     @SerializedName("items")
     private List<YoutubeSearchResults> youtubeSearchResultsList;
-
-    public List<YoutubeSearchResults> getYoutubeSearchResultsList() {
-        return youtubeSearchResultsList;
-    }
 
     protected YoutubeSearchModel(Parcel in) {
         youtubeSearchResultsList = in.createTypedArrayList(YoutubeSearchResults.CREATOR);
@@ -41,4 +37,10 @@ public class YoutubeSearchModel implements Parcelable {
             return new YoutubeSearchModel[size];
         }
     };
+
+    public List<YoutubeSearchResults> getYoutubeSearchResultsList() {
+        return youtubeSearchResultsList;
+    }
+
+
 }

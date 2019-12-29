@@ -9,6 +9,8 @@ public class RetrofitInstanceBuilder {
 
     public static final String YOUTUBE_SEARCH_BASE_URL = "https://www.googleapis.com/";
 
+    public static final String NAVER_SEARCH_BASE_URL = "https://www.googleapis.com/";
+
 
 
     private static Retrofit retrofitGoogle
@@ -32,5 +34,18 @@ public class RetrofitInstanceBuilder {
             = retrofitYoutube.create(SearchService.class);
 
     public static SearchService getYoutubeSearchService(){return YOUTUBE_SEARCH_SERVICE; }
+
+
+    private static Retrofit retrofitNaver
+            = new Retrofit.Builder().baseUrl(NAVER_SEARCH_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+
+    private static final SearchService NAVER_SEARCH_SERVICE
+            = retrofitNaver.create(SearchService.class);
+
+    public static SearchService getNaverSearchService() {
+        return NAVER_SEARCH_SERVICE;
+    }
 
 }

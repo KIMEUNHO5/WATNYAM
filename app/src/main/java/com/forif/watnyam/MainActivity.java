@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity
         YoutubeSearchClient youtubeSearchClient = YoutubeSearchClient.getInstance();
         youtubeSearchClient.executeYoutube();
 
+        NaverSearchClient naverSearchClient = NaverSearchClient.getInstance();
+        naverSearchClient.executeNaver();
+
     }
 
     @Override

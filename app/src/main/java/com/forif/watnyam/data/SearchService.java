@@ -2,6 +2,8 @@ package com.forif.watnyam.data;
 
 
 import com.forif.watnyam.data.google.GoogleSearchModel;
+import com.forif.watnyam.data.naver.NaverSearchClient;
+import com.forif.watnyam.data.naver.NaverSearchModel;
 import com.forif.watnyam.data.youtube.YoutubeSearchModel;
 
 import retrofit2.Call;
@@ -22,5 +24,8 @@ public interface SearchService {
 
     @GET("youtube/v3/search?")
     Call<YoutubeSearchModel> getYoutubeSearchResult(@Query("part") String snippet, @Query("q") String query, @Query("key") String key, @Query("maxResults") int maxResults);
+
+    @GET("search/blog.json")
+    Call<NaverSearchModel> getNaverSearchResult(@Query("query") String query, @Query("display") int display, @Query("start") int start, @Query("sort") String sort);
 
 }
