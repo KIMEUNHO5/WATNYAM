@@ -5,8 +5,6 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.forif.watnyam.data.RetrofitInstanceBuilder;
-
 import java.util.List;
 
 import retrofit2.Call;

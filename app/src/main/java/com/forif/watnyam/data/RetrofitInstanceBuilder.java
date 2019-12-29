@@ -1,7 +1,5 @@
 package com.forif.watnyam.data;
 
-import com.forif.watnyam.data.naverimage.NaverImageService;
-
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -50,6 +48,4 @@ public class RetrofitInstanceBuilder {
         return NAVER_SEARCH_SERVICE;
     }
 
-    public static NaverImageService getNewsService() {
-    }
 }

@@ -16,7 +16,6 @@ public class GoogleRepository {
 
     public GoogleRepository() {
         googleSearchClient = GoogleSearchClient.getInstance();
-
     }
 
     public void fetchGoogleResultAsync(){

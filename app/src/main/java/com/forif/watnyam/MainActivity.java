@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity
         tabs.setupWithViewPager(viewPager);
 
 
-        GoogleViewModel googleViewModel
-                = ViewModelProviders.of(this).get(GoogleViewModel.class);
+//        GoogleViewModel googleViewModel
+//                = ViewModelProviders.of(this).get(GoogleViewModel.class);
+//
+//        googleViewModel.fetchGoogleSearchResults();
 
-        googleViewModel.fetchGoogleSearchResults();
-
-        YoutubeSearchClient youtubeSearchClient = YoutubeSearchClient.getInstance();
-        youtubeSearchClient.executeYoutube();
+//        YoutubeSearchClient youtubeSearchClient = YoutubeSearchClient.getInstance();
+//        youtubeSearchClient.executeYoutube();
 
         NaverSearchClient naverSearchClient = NaverSearchClient.getInstance();
         naverSearchClient.executeNaver();
