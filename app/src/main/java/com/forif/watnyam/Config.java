@@ -11,5 +11,8 @@ public class Config {
     public static final String NAVER_CLIENT_ID = "T4k2ojEfc8XVCq7fsIxq";
     public static final String NAVER_CLIENT_SECRET = "obaGBdBu8f";
 
+    public static final String NAVER_BLOG_CLIENT_ID = "3HoejgiNqkVFF2Zq7HdE";
+    public static final String NAVER_BLOG_CLIENT_SECRET = "LBMFJHiKpt";
+
 //
 }

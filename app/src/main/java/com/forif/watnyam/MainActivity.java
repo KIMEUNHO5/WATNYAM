@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import com.forif.watnyam.data.google.GoogleSearchClient;
 import com.forif.watnyam.data.google.GoogleViewModel;
+import com.forif.watnyam.data.naver.NaverSearchClient;
 import com.forif.watnyam.data.youtube.YoutubeSearchClient;
 import com.forif.watnyam.ui.fragments.MyFragPagerAdapter;
 import com.forif.watnyam.ui.fragments.RouletteFragment;
