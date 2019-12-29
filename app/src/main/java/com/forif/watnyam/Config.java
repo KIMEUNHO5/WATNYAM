@@ -8,5 +8,9 @@ public class Config {
 
     public static final String GOOGLE_SEARCH_ENGINE_ID = "014695961139869825366:pt17zwd5wo2";
 
+    public static final String NAVER_CLIENT_ID = "3HoejgiNqkVFF2Zq7HdE";
+
+    public static final String Naver_CLIENT_SECRET = "LBMFJHiKpt";
+
 //
 }

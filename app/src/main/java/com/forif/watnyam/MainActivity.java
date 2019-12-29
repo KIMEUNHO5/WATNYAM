@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import com.forif.watnyam.data.google.GoogleSearchClient;
+import com.forif.watnyam.data.naver.NaverSearchClient;
 import com.forif.watnyam.data.youtube.YoutubeSearchClient;
 import com.forif.watnyam.ui.fragments.MyFragPagerAdapter;
 import com.forif.watnyam.ui.fragments.RouletteFragment;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity
 
         YoutubeSearchClient youtubeSearchClient = YoutubeSearchClient.getInstance();
         youtubeSearchClient.executeYoutube();
+
+        NaverSearchClient naverSearchClient = NaverSearchClient.getInstance();
+        naverSearchClient.executeNaver();
 
     }
 
