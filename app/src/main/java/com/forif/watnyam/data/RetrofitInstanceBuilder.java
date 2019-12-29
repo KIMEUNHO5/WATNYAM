@@ -1,5 +1,6 @@
 package com.forif.watnyam.data;
 
+import com.forif.watnyam.data.daumvideo.DaumService;
 import com.forif.watnyam.data.naverimage.NaverImageService;
 
 import retrofit2.Retrofit;
@@ -12,6 +13,8 @@ public class RetrofitInstanceBuilder {
     public static final String YOUTUBE_SEARCH_BASE_URL = "https://www.googleapis.com/";
 
     public static final String NAVER_SEARCH_BASE_URL = "https://openapi.naver.com/v1/";
+
+    public static final String DAUM_BASE_URL = "https://dapi.kakao.com/v2/";
 
 
 
@@ -64,4 +67,21 @@ public class RetrofitInstanceBuilder {
     public static NaverImageService getNaverImageService() {
         return NAVER_IMAGE_SERVICE;
     }
+
+
+    //Daum Video
+    private static Retrofit retrofitDaumVideo
+            = new Retrofit.Builder().baseUrl(DAUM_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+
+    private static final DaumService DAUM_SERVICE
+            = retrofitDaumVideo.create(DaumService.class);
+
+    public static DaumService getDaumService() {
+        return DAUM_SERVICE;
+    }
+
+
+
 }

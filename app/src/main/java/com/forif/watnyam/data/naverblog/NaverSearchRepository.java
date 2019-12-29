@@ -1,4 +1,4 @@
-package com.forif.watnyam.data.naver;
+package com.forif.watnyam.data.naverblog;
 
 import android.os.AsyncTask;
 
@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData;
 import com.forif.watnyam.model.NaverData;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NaverSearchRepository {
 

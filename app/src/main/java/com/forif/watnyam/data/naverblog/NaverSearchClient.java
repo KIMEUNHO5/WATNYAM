@@ -1,6 +1,5 @@
-package com.forif.watnyam.data.naver;
+package com.forif.watnyam.data.naverblog;
 
-import android.os.AsyncTask;
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;

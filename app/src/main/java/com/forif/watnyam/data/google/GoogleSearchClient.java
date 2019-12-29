@@ -21,7 +21,7 @@ import static com.forif.watnyam.Config.GOOGLE_SEARCH_ENGINE_ID;
 
 public class GoogleSearchClient {
 
-    private static final String TAG = "GoogleSearchClient";
+    private static final String TAG = "DaumVideoClient";
     public static GoogleSearchClient googleSearchClient;
 
     private MutableLiveData<ArrayList<GoogleData>> mutableLiveData = new MutableLiveData<>();

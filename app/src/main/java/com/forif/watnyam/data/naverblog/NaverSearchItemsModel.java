@@ -1,4 +1,4 @@
-package com.forif.watnyam.data.naver;
+package com.forif.watnyam.data.naverblog;
 
 import android.os.Parcel;
 import android.os.Parcelable;

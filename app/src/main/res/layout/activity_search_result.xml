@@ -64,6 +64,22 @@
         android:layout_height="@dimen/rv_height"/>
 
     <TextView
+        android:text="DAUM VIDEO"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:id="@+id/tv_title_daum_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_daum_video_result"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:layout_height="@dimen/rv_height"/>
+
+    <TextView
         android:text="GOOGLE"
         android:layout_margin="8dp"
         android:textSize="20sp"

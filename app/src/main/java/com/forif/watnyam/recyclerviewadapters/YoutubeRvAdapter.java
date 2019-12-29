@@ -1,10 +1,12 @@
 package com.forif.watnyam.recyclerviewadapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,6 +45,15 @@ public class YoutubeRvAdapter extends RecyclerView.Adapter<YoutubeRvAdapter.Yout
                     .placeholder(R.drawable.ic_launcher_background)
                     .into(holder.imageView);
         }
+        //youtube.com/watch?v=
+        holder.frameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.youtube.com/watch?v=" + youtubeDataArrayList.get(position).getId()));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -53,11 +64,13 @@ public class YoutubeRvAdapter extends RecyclerView.Adapter<YoutubeRvAdapter.Yout
     class YoutubeViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
         TextView textView;
+        FrameLayout frameLayout;
 
         public YoutubeViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.img_youtube);
             textView = itemView.findViewById(R.id.tv_vh_youtube_title);
+            frameLayout = itemView.findViewById(R.id.vh_youtube_frame);
         }
     }
 }

@@ -13,5 +13,8 @@ public class Config {
 
     public static final String NAVER_BLOG_CLIENT_ID = "1_EylYjLMpolbVvEqJG8";
     public static final String NAVER_BLOG_CLIENT_SECRET = "gnKwvR2kKD";
-//
+
+    public static final String DAUM_APP_KEY = "33524a77d53532fbf6981e2bcec082c0";
+    public static final String DAUM_REST_API_KEY = "9828c0648b47a421bb34a16085ddab0f";
+
 }

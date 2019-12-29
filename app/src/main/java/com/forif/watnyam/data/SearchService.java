@@ -2,7 +2,7 @@ package com.forif.watnyam.data;
 
 
 import com.forif.watnyam.data.google.GoogleSearchModel;
-import com.forif.watnyam.data.naver.NaverSearchItemsModel;
+import com.forif.watnyam.data.naverblog.NaverSearchItemsModel;
 import com.forif.watnyam.data.youtube.YoutubeSearchModel;
 
 import retrofit2.Call;

@@ -1,10 +1,13 @@
 package com.forif.watnyam.recyclerviewadapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,6 +44,14 @@ public class NaverRvAdapter extends RecyclerView.Adapter<NaverRvAdapter.NaverBlo
         String description = naverDataArrayList.get(position).getDescription();
         holder.textView.setText(Html.fromHtml(title));
         holder.textView2.setText(Html.fromHtml(description));
+        holder.frameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(naverDataArrayList.get(position).getLink()));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -52,11 +63,13 @@ public class NaverRvAdapter extends RecyclerView.Adapter<NaverRvAdapter.NaverBlo
 
         TextView textView;
         TextView textView2;
+        FrameLayout frameLayout;
 
         public NaverBlogViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.tv_vh_naver_blog_title);
             textView2 = itemView.findViewById(R.id.tv_vh_naver_blog_description);
+            frameLayout = itemView.findViewById(R.id.vh_naver_blog_frame);
         }
     }
 }

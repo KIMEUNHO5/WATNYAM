@@ -9,26 +9,29 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.forif.watnyam.data.daumvideo.DaumVideoModel;
+import com.forif.watnyam.data.daumvideo.DaumVideoViewModel;
 import com.forif.watnyam.data.google.GoogleViewModel;
-import com.forif.watnyam.data.naver.NaverViewModel;
+import com.forif.watnyam.data.naverblog.NaverViewModel;
 import com.forif.watnyam.data.naverimage.NaverImageViewModel;
 import com.forif.watnyam.data.youtube.YoutubeViewModel;
+import com.forif.watnyam.model.DaumVideoData;
 import com.forif.watnyam.model.GoogleData;
 import com.forif.watnyam.model.NaverData;
 import com.forif.watnyam.model.NaverImageData;
 import com.forif.watnyam.model.YoutubeData;
+import com.forif.watnyam.recyclerviewadapters.DaumVideoRvAdapter;
 import com.forif.watnyam.recyclerviewadapters.GoogleRvAdapter;
 import com.forif.watnyam.recyclerviewadapters.NaverImageRvAdapter;
 import com.forif.watnyam.recyclerviewadapters.NaverRvAdapter;
 import com.forif.watnyam.recyclerviewadapters.YoutubeRvAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SearchResultActivity extends AppCompatActivity {
 
-    RecyclerView rvNaverBlog, rvNaverImage, rvGoogle, rvYoutube;
-    RecyclerView.Adapter naverBlogAdapter, naverImageAdapter, googleAdapter, youtubeAdapter;
+    RecyclerView rvNaverBlog, rvNaverImage, rvGoogle, rvYoutube, rvDaumVideo;
+    RecyclerView.Adapter naverBlogAdapter, naverImageAdapter, googleAdapter, youtubeAdapter, daumVideoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,24 +42,25 @@ public class SearchResultActivity extends AppCompatActivity {
         rvNaverImage = findViewById(R.id.rv_naver_image_result);
         rvGoogle = findViewById(R.id.rv_google_result);
         rvYoutube = findViewById(R.id.rv_youtube_result);
+        rvDaumVideo = findViewById(R.id.rv_daum_video_result);
 
         Intent intent = getIntent();
         String foodNameRoulette = intent.getStringExtra("roulette_result_key");
 
-        GoogleViewModel googleViewModel
-                = ViewModelProviders.of(this).get(GoogleViewModel.class);
-        googleViewModel.fetchGoogleSearchResults(foodNameRoulette);
-        googleViewModel.getMutableLiveGoogleData().observe(this, new Observer<ArrayList<GoogleData>>() {
-            @Override
-            public void onChanged(ArrayList<GoogleData> googleData) {
-                   googleAdapter = new GoogleRvAdapter(SearchResultActivity.this, googleData);
-                   rvGoogle.setHasFixedSize(true);
-                   LinearLayoutManager linearLayoutManager = new LinearLayoutManager(SearchResultActivity.this);
-                   linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
-                   rvGoogle.setLayoutManager(linearLayoutManager);
-                   rvGoogle.setAdapter(googleAdapter);
-            }
-        });
+//        GoogleViewModel googleViewModel
+//                = ViewModelProviders.of(this).get(GoogleViewModel.class);
+//        googleViewModel.fetchGoogleSearchResults(foodNameRoulette);
+//        googleViewModel.getMutableLiveGoogleData().observe(this, new Observer<ArrayList<GoogleData>>() {
+//            @Override
+//            public void onChanged(ArrayList<GoogleData> googleData) {
+//                   googleAdapter = new GoogleRvAdapter(SearchResultActivity.this, googleData);
+//                   rvGoogle.setHasFixedSize(true);
+//                   LinearLayoutManager linearLayoutManager = new LinearLayoutManager(SearchResultActivity.this);
+//                   linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+//                   rvGoogle.setLayoutManager(linearLayoutManager);
+//                   rvGoogle.setAdapter(googleAdapter);
+//            }
+//        });
 
         YoutubeViewModel youtubeViewModel = ViewModelProviders.of(this).get(YoutubeViewModel.class);
         youtubeViewModel.fetchYoutubeDataFromRepo(foodNameRoulette);
@@ -98,6 +102,20 @@ public class SearchResultActivity extends AppCompatActivity {
                 linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
                 rvNaverImage.setLayoutManager(linearLayoutManager);
                 rvNaverImage.setAdapter(naverImageAdapter);
+            }
+        });
+
+        DaumVideoViewModel daumVideoViewModel = ViewModelProviders.of(this).get(DaumVideoViewModel.class);
+        daumVideoViewModel.fetchDaumVideoResults(foodNameRoulette);
+        daumVideoViewModel.getMutableLiveDaumVideoData().observe(this, new Observer<ArrayList<DaumVideoData>>() {
+            @Override
+            public void onChanged(ArrayList<DaumVideoData> daumVideoData) {
+                daumVideoAdapter = new DaumVideoRvAdapter(SearchResultActivity.this, daumVideoData);
+                rvDaumVideo.setHasFixedSize(true);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(SearchResultActivity.this);
+                linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+                rvDaumVideo.setLayoutManager(linearLayoutManager);
+                rvDaumVideo.setAdapter(daumVideoAdapter);
             }
         });
 

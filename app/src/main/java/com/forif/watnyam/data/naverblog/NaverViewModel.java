@@ -1,4 +1,4 @@
-package com.forif.watnyam.data.naver;
+package com.forif.watnyam.data.naverblog;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel;
 import com.forif.watnyam.model.NaverData;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NaverViewModel extends ViewModel {
 
