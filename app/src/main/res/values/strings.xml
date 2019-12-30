@@ -5,4 +5,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="sample_long">네이버 책검색 API를 사용하여 아래와 같이 책 정보를 검색하는 웹페이지를 만드실 수 있습니다. 예제는 HTML/CSS 및 Ajax와 PHP를 사용하여 아래와 같은 결과를 ...</string>
+    <string name="sample_text">sample text</string>
+    <string name="no_liked_post">좋아요가 없습니다!</string>
+    <string name="what_do_you_prefer">지금 뭐가 더 끌리시나요?</string>
+    <string name="win_msg">우승!!!</string>
+    <string name="watnyam_roulette">WATNYAM 룰렛</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
 </resources>

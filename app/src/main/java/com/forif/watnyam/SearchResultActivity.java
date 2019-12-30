@@ -15,6 +15,8 @@ import com.forif.watnyam.data.google.GoogleViewModel;
 import com.forif.watnyam.data.naverblog.NaverViewModel;
 import com.forif.watnyam.data.naverimage.NaverImageViewModel;
 import com.forif.watnyam.data.youtube.YoutubeViewModel;
+import com.forif.watnyam.database.MyRoomRepo;
+import com.forif.watnyam.database.MyRoomViewModel;
 import com.forif.watnyam.model.DaumVideoData;
 import com.forif.watnyam.model.GoogleData;
 import com.forif.watnyam.model.NaverData;
@@ -32,6 +34,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
     RecyclerView rvNaverBlog, rvNaverImage, rvGoogle, rvYoutube, rvDaumVideo;
     RecyclerView.Adapter naverBlogAdapter, naverImageAdapter, googleAdapter, youtubeAdapter, daumVideoAdapter;
+    MyRoomRepo myRoomRepo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +47,11 @@ public class SearchResultActivity extends AppCompatActivity {
         rvYoutube = findViewById(R.id.rv_youtube_result);
         rvDaumVideo = findViewById(R.id.rv_daum_video_result);
 
+        myRoomRepo = MyRoomRepo.getInstance(this);
+
         Intent intent = getIntent();
         String foodNameRoulette = intent.getStringExtra("roulette_result_key");
+
 
 //        GoogleViewModel googleViewModel
 //                = ViewModelProviders.of(this).get(GoogleViewModel.class);
@@ -110,7 +116,7 @@ public class SearchResultActivity extends AppCompatActivity {
         daumVideoViewModel.getMutableLiveDaumVideoData().observe(this, new Observer<ArrayList<DaumVideoData>>() {
             @Override
             public void onChanged(ArrayList<DaumVideoData> daumVideoData) {
-                daumVideoAdapter = new DaumVideoRvAdapter(SearchResultActivity.this, daumVideoData);
+                daumVideoAdapter = new DaumVideoRvAdapter(SearchResultActivity.this, daumVideoData, myRoomRepo);
                 rvDaumVideo.setHasFixedSize(true);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(SearchResultActivity.this);
                 linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
@@ -118,7 +124,6 @@ public class SearchResultActivity extends AppCompatActivity {
                 rvDaumVideo.setAdapter(daumVideoAdapter);
             }
         });
-
 
     }
 }

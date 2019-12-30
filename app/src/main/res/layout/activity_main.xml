@@ -24,10 +24,13 @@
             android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
             android:background="?attr/colorPrimary" />
 
+
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabTextAppearance="@style/tab_text"
             android:background="@color/colorPrimaryBright" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -35,18 +38,9 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:background="@color/colorBackground"/>
-
-    <ImageView
-        android:src="@drawable/logo"
-        android:layout_marginTop="620dp"
-        android:layout_marginLeft="300dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"      />
-
-
 
 
 

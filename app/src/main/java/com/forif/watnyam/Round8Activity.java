@@ -8,9 +8,9 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class round8 extends AppCompatActivity {
+public class Round8Activity extends AppCompatActivity {
 
-    private static final String TAG = "round8";
+    private static final String TAG = "Round8Activity";
     ImageView image1;
     ImageView image2;
     int[] imgs = {R.drawable.food1, R.drawable.food2,R.drawable.food3,R.drawable.food4,R.drawable.food5,R.drawable.food6,
@@ -24,7 +24,7 @@ public class round8 extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.round8);
+        setContentView(R.layout.round8_activity);
 
         Intent intent = getIntent();
         r8 = intent.getIntArrayExtra("key");
@@ -40,7 +40,7 @@ public class round8 extends AppCompatActivity {
 
 
         image1.setOnClickListener(new View.OnClickListener() {
-            Intent intent2 = new Intent(getApplicationContext(), round4.class);
+            Intent intent2 = new Intent(getApplicationContext(), Round4Activity.class);
             @Override
             public void onClick(View view) {
                 if(count2>7){
@@ -58,7 +58,7 @@ public class round8 extends AppCompatActivity {
         });
 
         image2.setOnClickListener(new View.OnClickListener() {
-            Intent intent2 = new Intent(getApplicationContext(), round4.class);
+            Intent intent2 = new Intent(getApplicationContext(), Round4Activity.class);
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: " + r8[7]);

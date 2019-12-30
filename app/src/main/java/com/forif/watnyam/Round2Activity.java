@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class round2 extends AppCompatActivity {
+public class Round2Activity extends AppCompatActivity {
     ImageView image1;
     ImageView image2;
     int [] r2= new int[2];
@@ -18,7 +18,7 @@ public class round2 extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.round2);
+        setContentView(R.layout.round2_activity);
 
         Intent intent = getIntent();
         r2 = intent.getIntArrayExtra("key3");
@@ -31,7 +31,7 @@ public class round2 extends AppCompatActivity {
         image2.setImageResource(imgs[r2[1]]);
 
         image1.setOnClickListener(new View.OnClickListener() {
-            Intent intent4 = new Intent(getApplicationContext(), finalround.class);
+            Intent intent4 = new Intent(getApplicationContext(), FinalRoundActivity.class);
             @Override
             public void onClick(View view) {
                 finalfood[0]=r2[0];
@@ -41,7 +41,7 @@ public class round2 extends AppCompatActivity {
         });
 
         image2.setOnClickListener(new View.OnClickListener() {
-            Intent intent4 = new Intent(getApplicationContext(), finalround.class);
+            Intent intent4 = new Intent(getApplicationContext(), FinalRoundActivity.class);
             @Override
             public void onClick(View view) {
                 finalfood[0]=r2[1];

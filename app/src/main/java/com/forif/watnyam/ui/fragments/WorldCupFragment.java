@@ -7,14 +7,13 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.forif.watnyam.R;
-import com.forif.watnyam.round8;
+import com.forif.watnyam.Round8Activity;
 
 
 /**
@@ -73,7 +72,7 @@ public class WorldCupFragment extends Fragment {
         image2 = view.findViewById(R.id.image2);
 
         image1.setOnClickListener(new View.OnClickListener() {
-            Intent intent1 = new Intent(getContext(), round8.class);
+            Intent intent1 = new Intent(getContext(), Round8Activity.class);
             @Override
             public void onClick(View view) {
                 if(count>15){
@@ -92,7 +91,7 @@ public class WorldCupFragment extends Fragment {
         });
 
         image2.setOnClickListener(new View.OnClickListener() {
-            Intent intent1 = new Intent(getContext(), round8.class);
+            Intent intent1 = new Intent(getContext(), Round8Activity.class);
             @Override
             public void onClick(View view) {
 

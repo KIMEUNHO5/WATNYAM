@@ -6,7 +6,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class finalround extends AppCompatActivity {
+public class FinalRoundActivity extends AppCompatActivity {
 
     int[] finalfood=new int[1];
 
@@ -20,7 +20,7 @@ public class finalround extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.finalround);
+        setContentView(R.layout.finalround_activity);
         image1 = findViewById(R.id.image1);
         Intent intent = getIntent();
         finalfood = intent.getIntArrayExtra("key4");

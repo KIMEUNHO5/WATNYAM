@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class round4 extends AppCompatActivity {
+public class Round4Activity extends AppCompatActivity {
 
     ImageView image1;
     ImageView image2;
@@ -22,7 +22,7 @@ public class round4 extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.round4);
+        setContentView(R.layout.round4_activity);
 
         Intent intent = getIntent();
         r4 = intent.getIntArrayExtra("key2");
@@ -34,7 +34,7 @@ public class round4 extends AppCompatActivity {
         image2.setImageResource(imgs[r4[1]]);
 
         image1.setOnClickListener(new View.OnClickListener() {
-            Intent intent3 = new Intent(getApplicationContext(), round2.class);
+            Intent intent3 = new Intent(getApplicationContext(), Round2Activity.class);
             @Override
             public void onClick(View view) {
                 if(count3 > 3){
@@ -52,7 +52,7 @@ public class round4 extends AppCompatActivity {
         });
 
         image2.setOnClickListener(new View.OnClickListener() {
-            Intent intent3 = new Intent(getApplicationContext(), round2.class);
+            Intent intent3 = new Intent(getApplicationContext(), Round2Activity.class);
             @Override
             public void onClick(View view) {
                 if(count3 > 3){

@@ -9,4 +9,7 @@
     <dimen name="vh_width">250dp</dimen>
     <dimen name="vh_height">150dp</dimen>
     <dimen name="vh_margin">8dp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="roulette_image_wh">300dp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
 </resources>

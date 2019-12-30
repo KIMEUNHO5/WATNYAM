@@ -17,4 +17,13 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/bungee</item>
+    </style>
+
+    <style name="button_text" parent="TextAppearance.AppCompat.Button">
+        <item name="android:fontFamily">@font/bungee</item>
+    </style>
+
+
 </resources>
